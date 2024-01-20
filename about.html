@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="functions.js" defer></script>
+    <title>$sudo about</title>
+</head>
+<body>
+
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://discord.gg/YgVkSJDsUJ">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="about" class="content-section">
+            <h2>Overview</h2>
+            <p>This project comprises a set of Python scripts designed to interact with the Bot Hosting service provided by <a href="https://bot-hosting.net/">bot-hosting.net</a>. The scripts are intended to offer users a convenient command-line interface for managing their Bot Hosting accounts and servers.</p>
+
+            <h2>Features</h2>
+            <h3>Account Management</h3>
+            <ul>
+                <li>Retrieve account information, including username, ID, coins, and avatar.</li>
+                <li>Check the total amount of coins in the account.</li>
+                <li>Obtain affiliate data, including coins per referral, referral link, and usage statistics.</li>
+                <li>Generate a new SFTP password for added security.</li>
+            </ul>
+
+            <h3>Server Management</h3>
+            <ul>
+                <li>Retrieve information about servers, including renewal details, plan specifications, and status.</li>
+                <li>Change the programming language of a server, supporting languages like Java, Python, Node.js, Lua, Deno, and Nodemon.</li>
+                <li>Delete servers with user confirmation.</li>
+                <li>Display a list of all servers associated with the account.</li>
+            </ul>
+
+            <h2>Usage</h2>
+            <p>To use the provided scripts, users need to obtain their authentication ID (auth id) from the <a href="https://bot-hosting.net/panel/">Bot Hosting website</a> and incorporate it into the scripts.</p>
+            <pre><code># Initialize the Account and Server classes
+acc = Account(auth_id)
+serv = Server(auth_id)
+
+# Example usage of the functions
+serv.delete()  # Delete a server (user confirmation required)
+serv.show()    # Display a list of all servers
+serv.get_info()  # Retrieve detailed information about a specific server
+
+acc.coins_amount()  # Check the total amount of coins in the account
+acc.about()  # Display a quick overview of the account
+acc.id_check()  # Check if the Auth ID is valid
+acc.sftp_pass()  # Generate a new SFTP password
+            </code></pre>
+
+            <h2>How to Get Started</h2>
+            <ol>
+                <li>Obtain your authentication ID (auth id) by following the instructions provided in the <code>get_auth_id</code> method of the <code>Account</code> class.</li>
+                <li>Initialize the <code>Account</code> and <code>Server</code> classes with your authentication ID.</li>
+                <li>Use the provided methods to manage your Bot Hosting account and servers.</li>
+            </ol>
+
+            <p>Feel free to explore and customize the scripts based on your specific needs.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vortex. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
